@@ -8,42 +8,38 @@ namespace Mission3Assignment
 {
     internal class FoodItem
     {
-        // Declare the foodList as a static class-level variable
+        // Declare the foodList that foodItem object will be stored in
         private static List<FoodItem> foodList = new List<FoodItem>();
 
         // Properties to store the food details
-        public string Name { get; set; }
-        public string Category { get; set; }
-        public int Quantity { get; set; }
-        public string ExpirationDate { get; set; }
+        public  string Name { get; set; }
+        public  string Category { get; set; }
+        public  int Quantity { get; set; }
+        public  string ExpirationDate { get; set; }
 
-        // Constructor to initialize the FoodItem object
-        public FoodItem(string fName, string fCategory, string fQuantity, string fExpDate)
+        // contructor for foodItem objects
+         public FoodItem(string name, string category, int quantity, string expirationDate)
         {
-            Name = fName;
-            Category = fCategory;
-            // Directly parse and set Quantity (assuming it is always valid)
-            Quantity = int.Parse(fQuantity);
-            ExpirationDate = fExpDate;
+            Name = name;
+            Category = category;
+            Quantity = quantity;
+            ExpirationDate = expirationDate;
+
+            // Add the new object to the foodList
+            foodList.Add(this);
         }
 
-        public static void Food(string fName, string fCategory, string fQuantity, string fExpDate)
+        // Method that retrieves all items in the foodList
+        public static List<FoodItem> GetFoodList()
         {
-            // Create a new FoodItem object using the constructor and add it to the list
-            FoodItem newFoodItem = new FoodItem(fName, fCategory, fQuantity, fExpDate);
-            foodList.Add(newFoodItem);
-
+            return foodList;
         }
-
-        public void Food(string fName) 
-        { 
-            foodList.Remove
-
-        }
-
-        public void Food()
+        
+        // this method deletes a food item based on the number the user inputs:
+        public static void deleteFoodItem(int number)
         {
-
+            foodList.RemoveAt(number);
+            Console.WriteLine($"Food item number {number} was deleted bruv"); 
         }
     }
 
