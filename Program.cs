@@ -111,7 +111,7 @@ while (true) //loop that keeps the program logic going until the user exits the 
                         //if statement to make sure there are objects in the list to work with
                         if (FoodItem.GetFoodList().Count == 0)
                             {
-                                Console.WriteLine("\nThere are no food items to delete\nDo something else home slice");
+                                Console.WriteLine("\nThere are no food items to view\nDo something else home slice");
                                 break;
                             }
 
